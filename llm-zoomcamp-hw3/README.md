@@ -31,6 +31,18 @@ Fill in the exact values from the Kestra execution logs if needed:
 | `4_simple_agent.yaml`, `summary_length=long` | `multilingual_agent` |  | 2-5x more than short |
 | `4_simple_agent.yaml`, `summary_length=long`, `english_brevity` changed to exactly 3 sentences | `english_brevity` |  | 2-4x more than original 1-sentence version |
 
+## Flow Modification for Question 5
+
+For Question 5, I changed the `english_brevity` task prompt in `4_simple_agent.yaml` from exactly 1 sentence to exactly 3 sentences.
+
+Relevant prompt change:
+
+```yaml
+english_brevity:
+  prompt: |
+    Rewrite the summary in English using exactly 3 sentences.
+```
+
 ## Learning in Public Draft
 
 Module 3 of LLM Zoomcamp by DataTalksClub complete.
