@@ -10,7 +10,7 @@ Homework: AI Orchestration with Kestra
 | 2. RAG vs No RAG | Vague, generic, or fabricated - the model guesses from training data |
 | 3. Token usage - short summary | 60-100 tokens |
 | 4. Token usage - long summary | 2-5x more |
-| 5. Modifying a flow | 2-4x more |
+| 5. Modifying a flow | About the same (within 20%) |
 | 6. Best Practices | Use traditional task-based workflows for predictability and auditability |
 
 ## Notes
@@ -23,13 +23,14 @@ Questions 3-5: The exact token counts can vary slightly between model runs. I us
 
 ## Token Count Evidence
 
-Fill in the exact values from the Kestra execution logs if needed:
+Actual values from the Kestra execution logs:
 
 | Flow run | Task | Output tokens | Selected bucket |
 | --- | --- | ---: | --- |
-| `4_simple_agent.yaml`, `summary_length=short` | `multilingual_agent` |  | 60-100 tokens |
-| `4_simple_agent.yaml`, `summary_length=long` | `multilingual_agent` |  | 2-5x more than short |
-| `4_simple_agent.yaml`, `summary_length=long`, `english_brevity` changed to exactly 3 sentences | `english_brevity` |  | 2-4x more than original 1-sentence version |
+| `4_simple_agent.yaml`, `summary_length=short` | `multilingual_agent` | 76 | 60-100 tokens |
+| `4_simple_agent.yaml`, `summary_length=long` | `multilingual_agent` | 115 | 2-5x more than short |
+| `4_simple_agent.yaml`, `summary_length=long`, original 1-sentence brevity prompt | `english_brevity` | 82 | baseline |
+| `4_simple_agent.yaml`, `summary_length=long`, `english_brevity` changed to exactly 3 sentences | `english_brevity` | 88 | About the same within 20% |
 
 ## Flow Modification for Question 5
 
