@@ -5,12 +5,16 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "dlt[duckdb]>=1.29.0",
+    "duckdb>=1.5.4",
     "gitsource>=0.0.5",
     "jupyter>=1.1.1",
+    "logfire>=4.37.0",
     "minsearch>=0.1.0",
     "openai>=2.41.0",
     "opentelemetry-api>=1.37.0",
     "opentelemetry-sdk>=1.37.0",
+    "pydantic-ai>=2.8.0",
     "python-dotenv>=1.2.2",
     "requests>=2.34.2",
     "sqlitesearch>=0.1.0",
